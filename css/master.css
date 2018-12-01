@@ -1,41 +1,38 @@
-.rootWidget {
+body {
+    /* background: linear-gradient(45deg, red, blue); */
+    width: 100vw;
+    height: 90vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: ChangingColorsChangingColorsChangingColors 15s ease infinite;
+    -moz-animation: ChangingColorsChangingColors 15s ease infinite;
+    animation: ChangingColors 15s ease infinite;
+    font-size: 20px;
+    text-align: center;
+    font-family: monaco;
     position: relative;
 }
 
-body {
-    background: linear-gradient(45deg, red, blue);
-    
-    /* background-color: red; */
-    /* animation: pulse 5s infinite; */
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    font-family: monaco;
-}
-
-@keyframes pulse {
+@keyframes ChangingColors {
     0% {
-        background-color: #001F3F;
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
     }
 
     100% {
-        background-color: #FF4136;
+        background-position: 0% 50%
     }
 }
 
-/* .shadow {
-    -moz-box-shadow: inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
-} */
-
-.clock {
+.clock, .climate {
     background-color: black;
     width: 400px;
     padding: 2px 30px;
-    /* border-radius: 10px; */
     position: absolute;
-    left: 35%;
     top: 50px;
     border-radius: 140px 0px 140px 0px;
     -moz-border-radius: 140px 0px 140px 0px;
@@ -43,52 +40,108 @@ body {
     border: 0px solid #000000;
 }
 
-.tab {
+.clock{
+    left: 10%;
+}
+
+.climate{
+    right: 10%;
+    width: 420px;
+    margin-bottom: 20px;
+}
+
+.tab, .auto-complete {
     background-color: black;
     position: absolute;
-    left: 35%;
+    border-radius: 80px 80px 80px 80px;
+    -moz-border-radius: 80px 80px 80px 80px;
+    -webkit-border-radius: 80px 80px 80px 80px;
+    border: 0px solid #000000;
+}
+
+
+.tab{
+    left: 15%;
     top: 350px;
-    width: 230px;
-    height: 200px;
-    /* border-radius: 10px; */
+    width: 270px;
+    height: 270px;
     margin-top: 20px;
-   border-radius: 0px 200px 200px 0px;
-   -moz-border-radius: 0px 200px 200px 0px;
-   -webkit-border-radius: 0px 200px 200px 0px;
-   border: 0px solid #000000;
+}
+
+.auto-complete h3{
+    font-size: 20px;
+}
+
+.auto-complete{
+    right: 18%;
+    top: 350px;
+    width: 270px;
+    height: 270px;
+    margin-top: 20px;
+}
+
+.auto-complete input{
+    width: 180px;
+    /* margin-top: -10px; */
 }
 
 .tab-header {
-    /* display: flex;
-  justify-content: space-between;
-  margin: 5px;
-  border-radius: 5px; */
     width: 180px;
     height: 30px;
-    margin-left: -10px;
-    margin-top: 5px;
-    /* display: flex; */
-    /* justify-content: space-between; */
+    margin-left: 40px;
+    margin-top: 40px;
+    display: flex; 
+    justify-content: space-around;
     border-radius: 5px;
 }
 
 .tablink {
-    width: auto;
-    text-align: center;
     cursor: pointer;
     background-color: white;
     color: black;
     font-size: 14px;
-    border-radius: 109px 109px 109px 109px;
-    -moz-border-radius: 109px 109px 109px 109px;
-    -webkit-border-radius: 109px 109px 109px 109px;
+    border-radius: 7px 7px 7px 7px;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
     border: 0px solid #000000;
-    /* margin: 20px; */
 }
 
 .tab-content {
     position: absolute;
-    margin-top: 40px;
-    margin-left: 70px;
+    margin-top: 65px;
     text-align: center;
+}
+
+.loading{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-bottom: 16px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 175px;
+    margin-bottom: 50px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.lists{
+    font-size: 14px;
+    display: flex;
+    margin-top: 25px;
+}
+
+.lists li{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

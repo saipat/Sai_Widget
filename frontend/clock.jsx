@@ -42,8 +42,8 @@ class Clock extends React.Component {
         return (
             <div className="clock">
                 <h2>Clock</h2>
-                <h3>Time: {hours}:{minutes}:{seconds} PST</h3>
-                <h3>Date: {this.state.time.toDateString()}</h3>
+                <h4>Time: {hours}:{minutes}:{seconds} PST</h4>
+                <h4>Date: {this.state.time.toDateString()}</h4>
             </div>
         );
     }
