@@ -70,18 +70,21 @@ body {
 
 .auto-complete h3{
     font-size: 20px;
+    margin-bottom: 0;
 }
 
 .auto-complete{
     right: 18%;
     top: 350px;
     width: 270px;
-    height: 270px;
+    height: auto;
     margin-top: 20px;
 }
 
 .auto-complete input{
     width: 180px;
+    color: Red;
+    font-size: 14px;
     /* margin-top: -10px; */
 }
 
@@ -135,13 +138,12 @@ body {
 
 .lists{
     font-size: 14px;
-    display: flex;
-    margin-top: 25px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+.lists li{
+    width: 150px;
+
 }
 
-.lists li{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+

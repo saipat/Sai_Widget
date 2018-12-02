@@ -14,19 +14,19 @@ class AutoComplete extends React.Component{
         this.handleInput = this.handleInput.bind(this);
     }
 
-
-
     pickName(event){
         const name = event.currentTarget.innerText;
         this.setState({inputVal: name});
     }
 
     handleInput(event){
+
         const changeValue = event.currentTarget.value;
-        this.setState({input: changeValue});
+        this.setState({inputVal: changeValue});
     }
 
     render() {
+        // console.log("inputvak++" + this.state.inputVal);
         const favEats = this.props.favEats;
         // console.log(favEats);
         const pickOptions = favEats.map((pick, idx) => {
@@ -41,11 +41,12 @@ class AutoComplete extends React.Component{
                 <h3>AutoComplete</h3>
                 <div>
                     <input
+                        type = "text"
                         onChange = {this.handleInput}
                         value = {this.state.inputVal}
                         placeholder =  'Search...' />
                     <ul className = "lists">
-                        <li>{favEats}</li>
+                        {pickOptions}
                     </ul>
                 </div>
             </div>
